@@ -171,21 +171,23 @@
         [self.scrollView setContentSize:contentSize];
         
         for (NSInteger i = 0; i < [self.dataSource numberOfCellsInGridView:self]; i++) {
-            MMGridViewCell *cell = [self.dataSource gridView:self cellAtIndex:i];
-            [cell performSelector:@selector(setGridView:) withObject:self];
-            [cell performSelector:@selector(setIndex:) withObject:[NSNumber numberWithInt:i]];
-            
-            
             NSInteger page = (int)floor((float)i / (float)cellsPerPage);
             NSInteger row  = (int)floor((float)i / (float)noOfCols) - (page * noOfRows);
-            
-            CGPoint origin = CGPointMake((page * gridBounds.size.width) + ((i % noOfCols) * cellBounds.size.width), 
-                                         (row * cellBounds.size.height));
-            
-            CGRect f = CGRectMake(origin.x, origin.y, cellBounds.size.width, cellBounds.size.height);
-            cell.frame = CGRectInset(f, self.cellMargin, self.cellMargin);
-            
-            [self.scrollView addSubview:cell];
+            if (page == self.currentPageIndex || page == self.currentPageIndex-1 || page == self.currentPageIndex+1) {
+                
+                MMGridViewCell *cell = [self.dataSource gridView:self cellAtIndex:i];
+                [cell performSelector:@selector(setGridView:) withObject:self];
+                [cell performSelector:@selector(setIndex:) withObject:[NSNumber numberWithInt:i]];            
+                
+                CGPoint origin = CGPointMake((page * gridBounds.size.width) + ((i % noOfCols) * cellBounds.size.width), 
+                                             (row * cellBounds.size.height));
+                
+                CGRect f = CGRectMake(origin.x, origin.y, cellBounds.size.width, cellBounds.size.height);
+                cell.frame = CGRectInset(f, self.cellMargin, self.cellMargin);
+                
+                [self.scrollView addSubview:cell];
+                
+            }
         }
     }
 }
