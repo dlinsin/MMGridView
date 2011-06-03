@@ -169,14 +169,10 @@
         CGSize contentSize = CGSizeMake(self.numberOfPages * gridBounds.size.width, gridBounds.size.height);
         [self.scrollView setContentSize:contentSize];
         
-        if (self.numberOfPages <= self.currentPageIndex) {
-            currentPageIndex = 0;
-        }
-        
         for (NSInteger i = 0; i < [self.dataSource numberOfCellsInGridView:self]; i++) {
             NSInteger page = (int)floor((float)i / (float)cellsPerPage);
             NSInteger row  = (int)floor((float)i / (float)noOfCols) - (page * noOfRows);
-            if (page == self.currentPageIndex || page == self.currentPageIndex-1 || page == self.currentPageIndex+1) {
+            if (self.numberOfPages <= self.currentPageIndex || page == self.currentPageIndex || page == self.currentPageIndex-1 || page == self.currentPageIndex+1) {
                 
                 MMGridViewCell *cell = [self.dataSource gridView:self cellAtIndex:i];
                 [cell performSelector:@selector(setGridView:) withObject:self];
