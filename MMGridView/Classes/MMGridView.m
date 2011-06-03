@@ -164,11 +164,8 @@
         }
         
         CGRect gridBounds = self.scrollView.bounds;
-        NSLog(@"1: %f,%f,%f,%f", gridBounds.origin.x, gridBounds.origin.y, gridBounds.size.width, gridBounds.size.height);
         CGRect cellBounds = CGRectMake(0, 0, gridBounds.size.width / (float)noOfCols, 
                                        gridBounds.size.height / (float)noOfRows);
-        NSLog(@"2: %d, %d", noOfRows, noOfCols);
-        NSLog(@"3: %f,%f,%f,%f", cellBounds.origin.x, cellBounds.origin.y, cellBounds.size.width, cellBounds.size.height);
         CGSize contentSize = CGSizeMake(self.numberOfPages * gridBounds.size.width, gridBounds.size.height);
         [self.scrollView setContentSize:contentSize];
         
