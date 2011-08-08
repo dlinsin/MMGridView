@@ -219,6 +219,14 @@
     }
 }
 
+- (void)scrollToPage:(NSUInteger)index {
+    CGRect frame;
+    frame.origin.x = self.scrollView.frame.size.width * index;
+    frame.origin.y = 0;
+    frame.size = self.scrollView.frame.size;
+    [self.scrollView scrollRectToVisible:frame animated:NO];
+}
+
 // ----------------------------------------------------------------------------------
 
 #pragma - UIScrollViewDelegate

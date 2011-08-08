@@ -70,5 +70,6 @@
 @property (nonatomic, readonly) NSUInteger numberOfPages;
 
 - (void)reloadData;
+- (void)scrollToPage:(NSUInteger)index;
 
 @end
