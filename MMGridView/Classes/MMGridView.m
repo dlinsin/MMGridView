@@ -225,6 +225,7 @@
     frame.origin.y = 0;
     frame.size = self.scrollView.frame.size;
     [self.scrollView scrollRectToVisible:frame animated:NO];
+    [self updateCurrentPageIndex];
 }
 
 // ----------------------------------------------------------------------------------
