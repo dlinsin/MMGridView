@@ -160,12 +160,12 @@
         self.fassade.frame = CGRectMake((self.bounds.size.width - 680) / 2, 3, 680, 447);
         self.rahmen.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
         self.farbe.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
-        self.behang.frame = CGRectMake((self.bounds.size.width - 400) / 2 + 4, (self.bounds.size.height / 2) - (285 / 2) - 26, 380, 285);
+        self.behang.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
     } else {
         self.fassade.frame =  CGRectMake((self.bounds.size.width-400)/2, 3, 400, 600);
         self.rahmen.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
         self.farbe.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
-        self.behang.frame = CGRectMake((self.bounds.size.width - 400) / 2 + 4, (self.bounds.size.height / 2) - (285 / 2) - 26, 380, 285);
+        self.behang.frame = CGRectMake((self.bounds.size.width - 400) / 2, (self.bounds.size.height / 2) - (285 / 2), 380, 285);
     }
 
     [self reloadData];
