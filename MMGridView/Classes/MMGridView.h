@@ -51,6 +51,11 @@
 
 @interface MMGridView : UIView<UIScrollViewDelegate> 
 {
+    UIImageView *fassade;
+    UIImageView *rahmen;
+    UIImageView *farbe;
+    UIImageView *behang;
+    
     @private
     UIScrollView *scrollView;
     id<MMGridViewDataSource> dataSource;
@@ -68,6 +73,11 @@
 @property (nonatomic) NSUInteger cellMargin;
 @property (nonatomic, readonly) NSUInteger currentPageIndex;
 @property (nonatomic, readonly) NSUInteger numberOfPages;
+@property (nonatomic, retain) UIImageView *fassade;
+@property (nonatomic, retain) UIImageView *rahmen;
+@property (nonatomic, retain) UIImageView *farbe;
+@property (nonatomic, retain) UIImageView *behang;
+
 
 - (void)reloadData;
 - (void)scrollToPage:(NSUInteger)index;
